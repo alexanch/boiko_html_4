@@ -1,0 +1,263 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.left {float: left;}
+.right {float: right;}
+
+.clearfix: after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+#bg {
+	position: absolute;
+	
+	width: 100%;
+	background: #222 url(img/bg.jpg) no-repeat center top ;
+	background-size: cover;
+}
+
+.container {
+	width:1000px;
+	margin: 0 auto;
+	background: white;
+	box-sizing: border-box;
+}
+
+#header .container {
+	height: 178px;
+}
+
+#header {
+	position: absolute;
+	width: 100%;
+	height: 178px;
+}
+
+#wrapper .container {
+	margin-top: -12px;
+	padding:10px 20px;
+	width: 1000px;
+	background-color: white;
+}
+
+.logo {
+	margin-top:10px;
+	margin-left: 28px;
+	padding-top: 100px;
+
+	height: 70px;
+
+	width: 282px;
+	background: url(img/palm.png) no-repeat center top;
+}
+
+.logo h3 {
+
+	text-align: center;
+	margin-left: -20px;
+	font-family: Tahoma, sans-serif;
+	font-size: 12px;
+	color: #128aa7;
+}
+
+.contacts {
+	margin-top: 10px;
+}
+.contacts h3 {
+	text-align: left;
+	margin-left: 230px;
+	font-family: Tahoma, sans-serif;
+	font-size: 12px;
+	color: #128aa7;
+	padding-bottom: 5px;
+
+}
+
+.countries {
+	position: relative;
+	margin-top: 25px;
+	
+}
+
+.countries .img {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+}
+
+.countries a {
+
+	float: left;
+	margin-right: 15px;
+	display: block;
+	width: 50px;
+	font-size: 10px;
+	text-align: center;
+}
+
+.countries a:last-child {
+	margin-left: 0;
+}
+
+#content  {
+	margin-top: 184px;
+}
+
+#content img {
+	border-top: 1px solid #128aa7;
+	border-bottom: 1px solid #128aa7;
+}
+.menu {
+	margin-top: -4px;
+	height: 28px;
+	background-color: #323232;
+	border-bottom: 1px solid black;
+}
+
+.menu a {
+	font-family: Tahoma, sans-serif;
+	font-size: 14px;
+	color: white;
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	width: 1000px;
+}
+
+ul li {
+	float: left; /* элементы списка делаем блочными и выстраиваем в ряд */
+	width: 130px;
+	height: 28px; /* высоту лучше жестко указать, чтобы выпадающее меню появлялось в предсказуемом месте */
+	position: relative; /* чтобы выпадающее меню позиционировалось относительно родителя */
+	z-index: 1;
+	background-color: #323232;
+	padding: 0 5px;
+	padding-top: 4px;		
+	text-align: center;
+	box-sizing: border-box;
+}
+
+ul li ul {
+	display: none; /* скрываем выпадающе меню */
+	position: absolute; /* чтобы положение подменю не влияло на окружение и легко было позиционировать */
+	left: 0;
+	top: 25px; /* высоту лучше не делать большей высоты пункта меню первого уровня, иначе попасть на подменю будет проблематично */
+	margin: 0;
+	width: 150px;
+	background-color: #323232;
+
+}
+
+ul li ul li {
+	float: none;
+	display: block;
+	background: none;
+	text-align: left;
+	padding-left: 10px;
+}
+
+ul li:hover ul {
+	display: block; /* при наведении на пункт меню первого уровня, показывем подменю */
+}
+
+.fon {
+	width: 1000px;
+	overflow: hidden;
+	box-sizing: border-box;
+
+	color: #424c43;
+}
+
+
+#fon h2 {
+	display: inline-block;
+	font-family: Tahoma, sans-serif; 
+	font-size: 18px;
+	color: #424c43;
+}
+
+.rightColumn h2, 
+.leftColumn h2 {
+	text-align: center;
+	padding: 4px 0;
+}
+
+#footer {
+	padding: 16px 0;
+	text-align: center;
+	color:#fff;
+	font-family: Tahoma, sans-serif;
+	font-size: 12px;
+}
+hr {
+	border: 0px;
+	height: 1px;
+	width: 200px;
+	background-color: #c7cacf;
+}
+
+.fon1 {  /* фон для левой колонки (синий) */
+width: 100%;
+	background: #edeef0;
+float: left; /* делаем все обертки плавающими блоками чтобы избежать добавления блока с clear: both; */
+position: relative; /* чтобы иметь возможность сместить фон */
+right: 60%; /* обнажаем красный фон для центральной колонки. 30% - ширина центральной колонки */
+border-right: 1px solid #c7cacf;
+
+}
+.fon2 {/* фон для центральной колонки (красный) */
+width: 100%;
+background: #fff;
+float: left;
+position: relative;
+right: 20%; /* обнажаем желтый фон для правой колонки. 40% - ширина правой колонки */
+
+border-right: 1px solid #c7cacf;
+}
+.fon3 {/* фон для правой колонки (желтый) */
+width: 100%;
+background: #edeef0;
+float: left;
+}
+.leftColumn {
+
+box-sizing: border-box;
+width: 20%;
+float: left;
+overflow: hidden; /* страховка от ломки верстки объектами шире размера колонки-родителя */
+position:relative;
+left:80%; /* возвращаем колонки с контентом на свои позиции. 70% - сумма смещений оберток fon1 и fon2 */
+
+}
+.centerColumn {
+width: 60%;
+float: left;
+overflow: hidden;
+position:relative;
+left:80%;
+}
+.rightColumn {
+box-sizing: border-box;
+width: 20%;
+float: left;
+overflow: hidden;
+position:relative;
+left:80%;
+
+
+}
+
+.fon p {
+	padding-left: 16px;
+	line-height: 24px;
+	font-family: Tahoma, sans-serif; 
+	font-size: 14px;
+	color: #424c43;
+}
